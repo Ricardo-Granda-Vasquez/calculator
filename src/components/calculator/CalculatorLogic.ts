@@ -29,9 +29,7 @@ export const CalculatorLogic = (
 	};
 
 	const actionSelected = actions[keyWordName as ActionsTypes];
-	if (!actionSelected)
-		return `${result}${keyWordValue}`;
-	return actionSelected(result);
+	return !actionSelected ? `${result}${keyWordValue}` : actionSelected(result);
 };
 
 export default CalculatorLogic;

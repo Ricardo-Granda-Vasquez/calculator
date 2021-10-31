@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { CalculatorProps } from './CalculatorInterfaces';
-import KeyBoardNumbers from './KeyBoardNumbers';
+import KeyBoardNumbers from '../Keyboard/KeyBoardNumbers';
+import KeyBoardOperators from '../Keyboard/KeyBoarOperators';
 import CalculatorResult from './CalculatorResult';
 import CalculatorLogic from './CalculatorLogic';
 import './styles.scss';
-import KeyBoardOperators from './KeyBoarOperators';
 
 const Calculator = (props: CalculatorProps) => {
 	const [result, setResult] = useState<string>('');

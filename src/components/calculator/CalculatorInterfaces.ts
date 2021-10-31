@@ -1,13 +1,3 @@
-
-
-export default interface KeyBoardProps {
-	onClick: (e: string, val: string) => void;
-}
-
-// export interface KeyBoardOperatorsProps {
-// 	onClickOperand: (e: string, val: string) => void;
-// }
-
 export interface CalculatorProps {
 	title: string;
 }
