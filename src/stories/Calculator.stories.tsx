@@ -1,6 +1,7 @@
-import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory, storiesOf } from '@storybook/react';
 import Calculator from '../components/calculator/Calculator';
+import ProviderWrapper from '../redux/providerWrapper';
+import { store } from '../redux/store';
 
 
 export default {
@@ -9,8 +10,14 @@ export default {
 } as ComponentMeta<typeof Calculator>;
 
 
-const calculatorStory: ComponentStory<typeof Calculator> = () => (
-	<Calculator title='Calculator Test' />
-);
+const withProvider = (story: any) => (
+	<ProviderWrapper store={store}>
+		{story()}
+	</ProviderWrapper>
+)
 
-export const CalculatorInstance = calculatorStory.bind({});
+storiesOf('Button', module)
+	.addDecorator(withProvider)
+	.add('default', () => (
+		<Calculator title='test calculator' />
+	));

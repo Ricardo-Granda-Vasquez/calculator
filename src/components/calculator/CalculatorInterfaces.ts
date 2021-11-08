@@ -7,6 +7,10 @@ export interface CalculatorClassProps {
 	keyWordValue: string;
 }
 
+export interface CalculatorState {
+	result: string;
+}
+
 export interface CalculatorResultProps {
 	result?: string;
 }

@@ -1,20 +1,18 @@
-import React, { useState, Dispatch } from 'react';
-import { CalculatorProps } from './CalculatorInterfaces';
+import { CalculatorProps, CalculatorState } from './CalculatorInterfaces';
 import KeyBoardNumbers from '../Keyboard/KeyBoardNumbers';
 import KeyBoardOperators from '../Keyboard/KeyBoarOperators';
-
 import CalculatorResult from './CalculatorResult';
 import CalculatorLogic from './CalculatorLogic';
 import './styles.scss';
-import { useDispatch } from 'react-redux';
-import { CalculatorActions } from '../../redux/calculatorActions';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { setResult } from '../../redux/reducers/calculator';
 
 const Calculator = (props: CalculatorProps) => {
-	const [result, setResult] = useState<string>('');
-	const resultDispatch = useDispatch<Dispatch<CalculatorActions>>();
+	const { result } = useAppSelector((state: { result: CalculatorState }) => state.result);
+	const resultDispatch = useAppDispatch();
 	const onClick = (keyBoardName: string, keyBoardValue: string) => {
 		const resultUpdated = CalculatorLogic(keyBoardName, keyBoardValue, result);
-		resultDispatch({ type: 'SET_RESULT', payload: resultUpdated });
+		resultDispatch(setResult(resultUpdated));
 	}
 	return (
 		<div>
