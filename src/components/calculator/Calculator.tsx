@@ -22,6 +22,7 @@ const Calculator = (props: CalculatorProps) => {
 				<div className='calculator-buttons'>
 					<KeyBoardOperators onClick={onClick} />
 					<KeyBoardNumbers onClick={onClick} />
+					{/*TODO: Component for showing the historical operations*/}
 				</div>
 			</div>
 		</div>

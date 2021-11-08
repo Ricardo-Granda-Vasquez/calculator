@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Calculator - Test
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -10,6 +10,24 @@ In the project directory, you can run:
 
 For checking the development in storybook run the following command `npm run storybook`
 
+### Development procedures
+
+Requirement for this test from the client was to have a calculator build in React, with a specific rotate functionality in order to swap the last position of the character
+in the string. 
+
+#### Arquitecture
+We have considered, or prepared, this application to be developed in three layers: 
+- The Data Access Layer: here we don't have any connection to an API rest or messages for a data source, but we have considered it for further implementations. We have
+called the data access layer gateaways. 
+- The domain, or business logic: in this case we have implemented the redux state container for separating this logic from the renderic logic. In order to manage all the states. 
+- The rendering logic: is basically the render process, that is implemented in the calculator tsx file itself. In this case, there no much logic in the rendering (for using HOCs or different
+patterns) but it's important to keep in mind that the application, in order to keep the readability and scalability, should be separated in different and small components, keeping them in a very modular way. 
+
+### Notations
+- For the purposes of this test, we have used the window.Function() property instead of eval: the Function() object has less vulnerabilities than eval, but it's still not complete secure. It's 
+better to implement a respective class with all the operations we can have, and this class could be extendible for new implementations, for example, a scientific calculator. If not a class, and 
+a more declarative implementation is required, we can have an approach more focused in Functional Programming (instead of inheritance) but doing the respective operations without the usage of eval or the Function, and just using the operators by ordering it's priority in the string. 
+- Implemented with Storybook for demonstration purposes. 
 
 ### `npm test`
 

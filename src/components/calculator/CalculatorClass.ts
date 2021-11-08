@@ -65,7 +65,6 @@ export class CalculatorLogicClass {
 			multiply: () => this.multiply(),
 			minus: () => this.minus(),
 		};
-		console.log(this);
 		actions[this.operation as ActionsTypes]();
 	}
 
@@ -107,8 +106,6 @@ export class CalculatorLogicClass {
 	chooseOperation(operation: string, value: string) {
 		if (this.currentOperand == '') return;
 		if (this.previousOperand !== '') {
-
-			console.log("here");
 			this.calculate();
 		}
 		this.operation = operation;
