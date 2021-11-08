@@ -20,8 +20,7 @@ We have considered, or prepared, this application to be developed in three layer
 - The Data Access Layer: here we don't have any connection to an API rest or messages for a data source, but we have considered it for further implementations. We have
 called the data access layer gateaways. 
 - The domain, or business logic: in this case we have implemented the redux state container for separating this logic from the renderic logic. In order to manage all the states. 
-- The rendering logic: is basically the render process, that is implemented in the calculator tsx file itself. In this case, there no much logic in the rendering (for using HOCs or different
-patterns) but it's important to keep in mind that the application, in order to keep the readability and scalability, should be separated in different and small components, keeping them in a very modular way. 
+- The rendering logic: is basically the render process, that is implemented in the calculator tsx files itself. In this case, there no much logic in the rendering but it's important to keep in mind that the application, in order to keep the readability and scalability, should be separated in different and small components, keeping them in a very modular way. 
 
 ### Notations
 - For the purposes of this test, we have used the window.Function() property instead of eval: the Function() object has less vulnerabilities than eval, but it's still not complete secure. It's 
